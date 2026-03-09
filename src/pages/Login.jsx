@@ -36,8 +36,8 @@ function Login(){
   const loginWithGoogle = () => {
   account.createOAuth2Session(
     "google",
-    "http://appwrite-authentication-task-manager.netlify.app/tasks",
-    "http://appwrite-authentication-task-manager.netlify.app/login"
+    "https://appwrite-authentication-task-manager.netlify.app/tasks",
+    "https://appwrite-authentication-task-manager.netlify.app/login"
   );
 };
 
