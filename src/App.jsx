@@ -48,24 +48,22 @@
 
 // export default App;
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AnalyticsTracker from "./components/AnalyticsTracker";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Tasks from "./pages/Tasks";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App(){
-  const user = localStorage.getItem("user");
+
   return(
     <BrowserRouter>
-      <AnalyticsTracker />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/tasks" element={<Tasks />} /> */}
-        <Route path="/tasks" element={<ProtectedRoute user={user}><Tasks /></ProtectedRoute>} /> 
+        <Route path="/tasks" element={<ProtectedRoute><Tasks /></ProtectedRoute>}/>
       </Routes>
     </BrowserRouter>
   );
