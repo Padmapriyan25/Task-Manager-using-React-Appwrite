@@ -25,11 +25,19 @@ function Login(){
     }
   };
 
+//   const loginWithGoogle = () => {
+//   account.createOAuth2Session(
+//     "google",
+//     "http://localhost:5173/tasks",
+//     "http://localhost:5173/login"
+//   );
+// };
+
   const loginWithGoogle = () => {
   account.createOAuth2Session(
     "google",
-    "http://localhost:5173/tasks",
-    "http://localhost:5173/login"
+    "http://appwrite-authentication-task-manager.netlify.app/tasks",
+    "http://appwrite-authentication-task-manager.netlify.app/login"
   );
 };
 
