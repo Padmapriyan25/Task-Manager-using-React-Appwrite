@@ -53,9 +53,10 @@ import AnalyticsTracker from "./components/AnalyticsTracker";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Tasks from "./pages/Tasks";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App(){
-
+  const user = localStorage.getItem("user");
   return(
     <BrowserRouter>
       <AnalyticsTracker />
@@ -63,7 +64,8 @@ function App(){
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/tasks" element={<Tasks />} />
+        {/* <Route path="/tasks" element={<Tasks />} /> */}
+        <Route path="/tasks" element={<ProtectedRoute user={user}><Tasks /></ProtectedRoute>} /> 
       </Routes>
     </BrowserRouter>
   );
