@@ -14,25 +14,25 @@ function Tasks() {
 
   const navigate = useNavigate();
 
-  // const fetchTasks = async () => {
-  //   const user = await account.get();
-  //   setUserName(user.name);
-  //   const res = await getTasks(user.$id);
-  //   setTasks(res.documents);
-  // };
-
   const fetchTasks = async () => {
-  try {
     const user = await account.get();
     setUserName(user.name);
     const res = await getTasks(user.$id);
     setTasks(res.documents);
-  } catch (error) {
-    // user not logged in
-    navigate("/login");
-    console.log(error);
-  }
-};
+  };
+
+//   const fetchTasks = async () => {
+//   try {
+//     const user = await account.get();
+//     setUserName(user.name);
+//     const res = await getTasks(user.$id);
+//     setTasks(res.documents);
+//   } catch (error) {
+//     // user not logged in
+//     navigate("/login");
+//     console.log(error);
+//   }
+// };
 
   useEffect(()=>{
     fetchTasks();
