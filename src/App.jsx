@@ -50,21 +50,21 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AnalyticsTracker from "./components/AnalyticsTracker";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Tasks from "./pages/Tasks";
 
 function App(){
 
   return(
     <BrowserRouter>
-
       <AnalyticsTracker />
-
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<Tasks />} />
       </Routes>
-
     </BrowserRouter>
   );
 }
